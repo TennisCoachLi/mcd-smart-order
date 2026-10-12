@@ -4,7 +4,7 @@
 > 2026 麦当劳程序员创意开发大赛 · 参赛作品
 > 基于 **麦当劳中国官方 MCP（mcd-mcp）** 能力，用 WorkBuddy 开发的创意 Skill。
 
-一个给「想省钱、想就近、想吃得明白」的用户打造的 AI 点餐助手。它把麦当劳 MCP 的 35 个工具编排成 6 条可落地工作流：**省钱领券 → 比价 → 就近点餐 → 积分兑换 → 查活动**，还能从运动补给视角（高蛋白、训练后 30 分钟补给）帮网球教练 / 运动人群点餐。
+一个给「想省钱、想就近、想吃得明白」的用户打造的 AI 点餐助手。它把麦当劳 MCP 的 35 个工具编排成 6 条可落地工作流：**省钱领券 → 比价 → 就近点餐 → 积分兑换 → 查活动 → 个性化定制**，还能从运动补给视角（高蛋白、训练后 30 分钟补给）帮网球教练 / 运动人群点餐。
 
 ---
 
@@ -18,7 +18,7 @@
 | 适用人群 | 想省钱的普通消费者、运动人群（训练补给）、企业团餐 |
 | 核心卖点 | 一键领券 + 用券比价 + 就近门店 + 积分不浪费 |
 
-**5 条工作流**
+**6 条工作流**
 1. 💰 **省钱模式**：`auto-bind-coupons` 一键领券 → `query-my-coupons` / `query-store-coupons` 看券 → `calculate-price` 对比用券前后价 → `create-order`。
 2. 🏃 **训练补给模式**：`list-nutrition-foods` 筛高蛋白餐 → `query-meal-detail` 看可替换项 → 算价下单。
 3. 📍 **就近点餐 / 外送**：`query-nearby-stores` / `delivery-query-stores` → 选品 → 下单。
@@ -68,7 +68,7 @@
 {
   "mcpServers": {
     "mcd-mcp": {
-      "type": "streamablehttp",
+      "type": "streamableHttp",
       "url": "https://mcp.mcd.cn",
       "headers": {
         "Authorization": "Bearer YOUR_MCP_TOKEN"
@@ -112,6 +112,12 @@ python scripts/mcd_mcp_client.py call list-nutrition-foods '{}'  # 任意工具�
 
 ---
 
+## ⭐ 如果这个项目让你觉得「点餐本该这么克制」
+
+欢迎点个 Star —— 不是为排名，而是让更多被 App 推送骚扰、被结算页强制加购的人，知道还有一种更尊重用户的点餐方式。也欢迎提 Issue / PR，一起把「专属套餐设计师」做得更懂你。
+
+---
+
 ## 📂 目录结构
 
 ```
@@ -122,6 +128,7 @@ mcd-smart-order/
 ├── MCP_INTEGRATION.md            # 麦当劳 MCP Server/Tool/调用流程/业务价值
 ├── CONTEST_DECLARATION.md        # 参赛声明（官方原文，未改动）
 ├── workbuddy.md                  # 使用 WorkBuddy 开发的对话上下文
+├── CAPABILITIES.md              # 麦当劳 MCP 35 工具完整清单（作者参考）
 ├── ISSUE_TEMPLATE.md             # 报名 Issue 格式速查
 ├── scripts/
 │   └── mcd_mcp_client.py        # 零依赖 MCP 命令行客户端
