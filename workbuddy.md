@@ -18,7 +18,7 @@
   - 工具覆盖点餐、外送、领券、营养、积分商城、抽奖、活动派对等场景。
 
 ### 第 3 轮：开发 Skill（WorkBuddy 生成全部代码与文档）
-- 编写 `SKILL.md`：编排 mcd-mcp 工具为 5 条工作流（省钱 / 训练补给 / 就近点餐 / 积分玩法 / 活动派对）。
+- 编写 `SKILL.md`：编排 mcd-mcp 工具为 6 条工作流（省钱 / 训练补给 / 就近点餐 / 积分玩法 / 活动派对 / 个性化定制）。
 - 编写 `scripts/mcd_mcp_client.py`：零依赖（仅 Python 标准库）的 MCP Streamable HTTP 客户端，支持 initialize / tools/list / tools/call。
 - 编写 README、报名 Issue 模板与示例对话。
 - 全部文件由 WorkBuddy 直接写入本地项目目录，并完成 git 初始化与提交。
@@ -36,6 +36,16 @@
 ### 第 6 轮：按官方赛事要求重构仓库
 - WorkBuddy 抓取官方活动仓库 M-China/mcd-developer-innovation-challenge 的 README 与规则，确认参赛项目必须包含：README.md（项目介绍/安装方法/使用示例/目标用户）、MCP_INTEGRATION.md、CONTEST_DECLARATION.md（官方原文不可改动）、源代码，以及用于 WorkBuddy 专项奖励的 workbuddy.md。
 - 下载官方 CONTEST_DECLARATION.md（未改动原文），新增 MCP_INTEGRATION.md 与本文件，补全 README 的「目标用户 / 安装方法 / 使用示例」章节，并将报名 Issue 模板改为官方标准格式（不超过 1000 字、无图片）。
+
+### 第 7 轮：从「选择器」转向「专属套餐设计师」
+- 用户明确反对「在官方套餐里挑一个」的思路，要求 Skill 按用户自己的想法设计套餐。
+- WorkBuddy 据此重构第 6 条工作流为「个性化点餐 / 自定义套餐」：先问肉种（鸡 / 牛 / 鱼）与做法（烤 / 炸），再按偏好筛菜单；点名经典单品时主动说明酱料可选项与烹饪真相（如「香辣鸡腿堡鸡腿肉是油炸的」），并推热饮 + 蔬菜解腻。
+- 新增交互原则：**禁用从众话术**——绝不说「别人也常点这种组合」，尊重个体差异。
+
+### 第 8 轮：打磨表达与参赛钩子
+- 与用户共同敲定 README slogan：「不做套餐选择器，只做你的专属套餐设计师。」
+- 新建 DESIGN.md（5 大真实痛点 → MCP 能力 → Skill 解法对照 + 5 条设计原则）与 CAPABILITIES.md（用真实 Token 实连的 35 工具完整清单，仅作者参考）。
+- 同步更新本过程记录，体现 WorkBuddy「对话即开发、边聊边改」的特性。
 
 ## 二、WorkBuddy 在本项目中的实际作用
 
